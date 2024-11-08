@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOGO Offer</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+
+    .container {
+      width: 450px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .header {
+ 
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        position: relative;
+    
+        margin: 20px 0;
+        color: #ff6b81;
+        font-size: 24px;
+        font-weight: bold;
+ 
+      }
+  
+      .header::before,
+      .header::after {
+        content: "";
+        flex: 1;
+        border-bottom: 2px solid #e0e0e0;
+        margin: 0 5px;
+      }
+    .pricefullbox{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+     }
+     .checkbox-round {
+         width: 20px;
+         height: 20px;
+        color: #ff6b81;
+         cursor: pointer;
+     }
+     input[type="radio"]:checked{
+      -webkit-appearance:radio;
+      box-shadow: none;
+      background:rgb(252,252,252);
+    }
+    .option-box {
+      position: relative;
+      border: 2px solid #e0e0e0;
+    
+      padding: 15px;
+      margin: 20px 0;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+
+    .option-box:hover {
+      border-color: #ff6b81;
+    }
+
+    .option-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+    .option-header h1{
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+
+    .discount {
+      background-color: #ff6b81;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .old-price {
+      font-size: 14px;
+      color: #a0a0a0;
+      text-decoration: line-through;
+    }
+
+    .most-popular {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      background-color: #ff6b81;
+      color: white;
+      font-size: 12px;
+      padding: 5px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .selection {
+        display: none; /* Initially hidden */
+        justify-content: flex-start;
+        margin-top: 10px;
+        padding: 0px 20px;
+      }
+  
+      .option-box:hover .selection {
+        display: flex; /* Show on hover */
+      }
+  
+      .selection-item {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+      }
+  
+      .selection-item label {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+  
+      .selection-item select {
+        padding: 5px;
+        font-size: 14px;
+        margin: 5px;
+        border: 2px solid #d9d9d9;
+        border-radius: 5px;
+        width: 100px;
+      }
+      .selection-item .para{
+           margin-top: 15px;
+      }
+      .selection-item  label{
+        font-size: 15px;
+        font-weight: 500;
+      }
+    .total {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000 !important;
+    
+    }
+   .endup{
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+}
+.endup h5{
+    color: #ff6b81;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 0px;
+
+}
+    .add-to-cart {
+      background-color: #ff6b81;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 0;
+      border: none;
+      border-radius: 8px;
+      margin-top: 0px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+  
+ 
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">YAY! It's BOGO</div>
+
+  <!-- 1 Unit Option -->
+  <div class="option-box" onmouseover="selectOption(this)" onmouseout="deselectOption(this)">
+
+    <div  class="pricefullbox">
+        <div class="option-header">
+            <input type="radio" class="checkbox-round" > <h1 > <span>1 Unit</span>
+            <span class="discount">10% Off</span></h1>  
+        
+        </div>
+        <div class="pricebox">
+        <div class="price">$10.00 USD</div>
+        <div class="old-price">$24.00 USD</div>
+        </div>
+        </div>
+    <div class="selection">
+        <div class="selection-item">
+         <div class="para">
+             <p>#1</p>
+             <p>#2</p>
+             </div>
+          </div>
+        <div class="selection-item">
+          <label for="size">Size</label>
+          <select id="size">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select id="size">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+        </div>
+        <div class="selection-item">
+          <label for="color">Color</label>
+          <select id="color">
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+          <select id="color">
+            <option>color</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+        </div>
+      </div>
+  </div>
+
+  <!-- 2 Units Option (Most Popular) -->
+  <div class="option-box" onmouseover="selectOption(this)" onmouseout="deselectOption(this)">
+    <div class="most-popular">MOST POPULAR</div>
+    <div  class="pricefullbox">
+        <div class="option-header">
+            <input type="radio" class="checkbox-round" > <h1 > <span>2 Unit</span>
+            <span class="discount">20% Off</span><br></h1>
+        
+        </div>
+        <div class="pricebox">
+        <div class="price">$18.00 USD</div>
+        <div class="old-price">$24.00 USD</div>
+        </div>
+        </div>
+    <div class="selection">
+        <div class="selection-item">
+         <div class="para">
+             <p>#1</p>
+             <p>#2</p>
+             </div>
+          </div>
+        <div class="selection-item">
+          <label for="size">Size</label>
+          <select id="size">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select id="size">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+        </div>
+        <div class="selection-item">
+          <label for="color">Color</label>
+          <select id="color">
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+          <select id="color">
+            <option>color</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+        </div>
+      </div>
+  </div>
+
+  <!-- 3 Units Option -->
+  <div class="option-box" onmouseover="selectOption(this)" onmouseout="deselectOption(this)">
+
+    <div  class="pricefullbox">
+        <div class="option-header">
+            <input type="radio" class="checkbox-round" > <h1 > <span>3 Unit</span>
+            <span class="discount">30% Off</span></h1>  
+        
+        </div>
+        <div class="pricebox">
+        <div class="price">$24.00 USD</div>
+        <div class="old-price">$24.00 USD</div>
+        </div>
+        </div>
+    <div class="selection">
+        <div class="selection-item">
+         <div class="para">
+             <p>#1</p>
+             <p>#2</p>
+             </div>
+          </div>
+        <div class="selection-item">
+          <label for="size">Size</label>
+          <select id="size">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select id="size">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+        </div>
+        <div class="selection-item">
+          <label for="color">Color</label>
+          <select id="color">
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+          <select id="color">
+            <option>color</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+        </div>
+      </div>
+  </div>
+ <div class="endup">
+    <h5 for=""> Free Delivery</h5>
+    <h5 class="total">Total: $18.00 USD</h5>
+ </div>
+
+  <button class="add-to-cart">+ Add to Cart</button> 
+  <div  style="display: flex;justify-content:right;margin:10px; ">
+    <em style="color: #cdcdcd;"> @Powered by Pumper</em>
+</div> 
+</div>
+<script>
+  function selectOption(optionBox) {
+    const radioButton = optionBox.querySelector('.checkbox-round');
+    radioButton.checked = true;
+    optionBox.style.borderColor = "#ff6b81";
+  }
+
+  function deselectOption(optionBox) {
+    const radioButton = optionBox.querySelector('.checkbox-round');
+    radioButton.checked = false;
+    optionBox.style.borderColor = "#ff6b81";
+  }
+</script>
+</body>
+</html>
